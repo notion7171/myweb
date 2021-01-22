@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id='btn'>OK</button>
+    <input id='name' type='text'>
+    <script>
+
+        let name = document.getElementById('name');
+        name.onkeydown = function () {
+            console.log(name.value);
+            document.getElementById('btn').innerHTML = name.value;
+        }
+
+        let btn = document.getElementById('btn');
+        btn.onclick = function () {
+            console.log('click');
+            window.alert('click');
+        }
+        btn.onmouseover = function () {
+            console.log('mouseover');
+            btn.style.backgroundColor = 'yellow';
+        }
+        /*btn.onmouseout = function () {
+            console.log('mouseout');
+            btn.style.backgroundColor = '';
+        }*/
+        btn.onmouseout = myMouseOut;
+
+        function myMouseOut() {
+            console.log('mouseout');
+            btn.style.backgroundColor = 'red';
+        }
+        //console.log(window);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css</title>
+    <link type="text/css" rel="stylesheet" href="css06external.css"></link>
+    <style>
+        p { color: blue!important;}
+        p { color: yellow;}
+        p { color: red;}
+        *{color: red;background-color: lightcyan;font-size:13px;}
+        h1 {background-color: yellowgreen;}
+        .class1 {
+            color : blue;
+            background-color: tomato;
+        }
+        h2 {background-color: teal;}
+        h3.class1 {
+            color : blueviolet;
+            background-color: burlywood;
+        }
+        #id1 {
+            color: blue;
+            background-color: pink;
+        }
+        h4#id1 {
+            color: green;
+            background-color: red;
+        }
+        h1[text] {
+            color:red;
+            background-color: gray;
+        }
+        h1[text="attr3"] {
+            color: green;
+            background-color: pink;
+        }
+        h1[text~="bb"] {
+            color:yellow; background-color: green;
+        }
+        h1[text|="a1"] {color:yellow; background-color: blue;}
+        h1[text^="img"] {color:yellow; background-color: red;}
+        h1[text$=".png"] {color:yellow; background-color: gray;}
+        h1[text*="ong"] {color: yellow; background-color: pink;}
+
+       
+        
+    </style>
+     <link type="text/css" rel="stylesheet" href="css06external2.css"></link>
+</head>
+<body>
+    <p>CSS가 중복 정의된 경우 어떤 것이 적용될까?</p><br>
+    <h1>Universal Selector</h1>
+    <h2>모두 같은 색상, 같은 크기</h2>
+    <h1 class="class1">Class 1 입니다.</h1>
+    <h3 class="class1">Element+Class Sector</h3>
+    <h1 id="id1">ID1 선택자</h1>
+    <h4 id="id1">Element+ID Selector</h4>
+    <h1 text="attr1">text 속성 이름 선택자</h1>
+    <h1 text="attr3">속성과 속성값 선택자</h1>
+    <h1 text="aa bb cc">리스트 매칭 속성</h1>
+    <h1 text="a1-a2-a3">범위 텍스트 매칭 속성</h1>
+    <h1 text="img/pic.jpg">텍스트 시작 매칭 속성</h1>
+    <h1 text="img/pic.png">텍스트 끝 매칭 속성</h1>
+    <h1 text="Seongyoung Hong">텍스트 패턴 매칭 속성</h1>
+
+</body>
+</html>

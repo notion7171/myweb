@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form3.html</title>
+</head>
+
+<body>
+   <!-- <table border='1'>
+        <tr>
+            <td><label for="id">ID</label>
+                <input type="checkbox" name="id" id="id">
+            </td>
+            <td>홍길동</td>
+            <td>20세</td>
+            <td>독서</td>
+            <td><button>OK</button></td>
+
+        </tr>
+        <tr>
+            <td><label for="id">ID</label>
+                <input type="checkbox" name="id" id="id">
+            </td>
+            <td>홍길동</td>
+            <td>20세</td>
+            <td>독서</td>
+            <td><button>OK</button></td>
+
+        </tr>
+        
+    </table>-->
+    <script>
+       let members=[];
+       /*let member = {
+           name : '홍길동',
+           age:'25세',
+           hobby:'독서'
+       }*/ //이렇게 만들어도 된다.
+
+       for (let i = 1; i <= 3; i++) {
+           let member = {};
+           member.name = '홍길동' + i;
+           member.age = 20 + i + '세';
+           member.hobby = '독서' + i;
+           members.push(member);
+       }
+
+       console.log(members);
+
+       let tableTag = document.createElement('table');
+       let tr = document.createElement('tr');          
+       tableTag.setAttribute('border', '1');
+
+       for (let i = 0; i < members.length; i++) {
+            let td = document.createElement('th');
+            let name = members[i].name;
+            let age = members[i].age;
+            let hobby = members[i].hobby;
+
+            tr.append(td);
+            
+        }
+
+        tableTag.append(tr);
+        tableTag.setAttribute('border','1');
+       document.getElementById('show').append(tableTag);
+       
+
+    </script>
+
+</body>
+
+</html>

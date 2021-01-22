@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>이미지 기본 표현</h3>
+    <img src="../images/html5.jpg" alt="이미지가 표시되지 않습니다."> 
+    <!--src : 이미지 파일이 저장된 경로를 지정-->
+    <!--alt : 이미지를 웹 브라우저에서 표시하지 못했을 경우 표시되는 대체 텍스트 지정-->
+
+    <h3>이미지에 설명 추가 & 오른쪽 정렬</h3>
+    <img src="../images/html5.jpg" title="HTML5 로고 이미지" style="float:right">
+    <h3>이미지의 크기를 픽셀 단위로 조정</h3>
+    <img src="../images/html5.jpg" style="width: 50px; height: 60px;">
+    <!--style : 이미지의 스타일(크기, 위치 등)을 픽셀(pixel) 단위로 지정-->
+    <!--width/height : 가로 길이와 세로 길이를 픽셀(pixel)단위로 지정-->
+    <!--위치는 float 값을 이용하여 조절. 속성값으로 left, right, none과 같은 값을 사용할 수 있으며, 묶음 태그(<div>,<p>,<ol>,<ul>,<table>,<img>등)에만 적용할 수 있다.-->
+
+    <h3>이미지의 크기를 % 단위로 조정</h3>
+    <img src="../images/html5.jpg" width=50% height=40%>
+    <!--%단위를 사용하면 웹브라우저의 크기에 따라 이미지 크기가 조절되도록 지정할 수 있다.-->
+
+    <h3>이미지를 클릭하세요</h3>
+    <a href="http://www.w3.org" target="_blank"><img src="../images/html5.jpg" alt="HTML5 Logo" title="W3C 홈페이지로 이동"
+            border="2" style="width:100px; height:100px"></a>
+
+    <a href="http://cafe.naver.com/go2web" target="_blank"><img src="../images/go2web.jpg" alt="go2web site"
+            title="저자 홈페이지로 이동" border="2" style="width:100px; height:110px"></a>
+    <a href="http://en.wikipedia.org/wiki/Isaac_Newton" target="_blank"><img src="../images/newton.gif"
+            alt="newton site" title="뉴턴 홈페이지로 이동" border="2" style="width:170px; height:110px"></a>
+
+            <!--border : 이미지 경계선의 두께를 픽셀(pixel)단위로 지정-->
+
+    <h3>이미지에 제목 추가하기</h3>
+    <figure>
+        <img src="../images/html5.jpg" alt="HTML5 Logo" title="W3C 홈페이지">
+        <figcaption>[그림1]HTML5</figcaption>
+    </figure>
+    <figure>
+        <figcaption>[그림2]Google</figcaption>
+        <img src="../images/google.jpg" alt="google site" title="구글 크롬">
+    </figure>
+
+
+    <h3>오디오 자동 재생</h3>
+    <audio src="../images/eagle.mp3" controls loop autoplay></audio>
+    <!--src : 재생할 오디오 파일이 저장된 경로를 표시-->
+    <!--controls : 재생 제어기를 표시-->
+    <!--loop : 반복 재생-->
+    <!--autoplay : 웹 문서가 열림과 동시에 자동으로 재생-->
+    <!--muted : 음소거 상태로 시작-->
+    <!--preload : 오디오 파일 사용 여부와 상관없이 웹 문서가 열림과 동시에 다운로드-->
+
+
+
+    <h3>오디오 수동 재생</h3>
+    <audio src="../images/bear.mp3" controls></audio>
+
+
+    <h3>오디오 다중 재생</h3>
+    <audio controls>
+        <source src="../images/chicken.mp3" type="audio/mpeg">
+        <source src="../images/chicken.ogg" type="audio/ogg">
+        <source src="../images/chicken.wav" type="audio/wav">
+    </audio>
+    <!--source 태그는 여러 형식의 오디오 파일을 동시에 제공할 때 사용.-->
+
+
+    <h3>비디오 자동 재생</h3>
+    <video src="../images/bear.mp4" controls loop autoplay width="300" height="250"></video>
+    <!--src : 재생할 비디오 파일이 저장된 경로를 표시-->
+    <!--controls : 재생 제어기 표시-->
+    <!--width, height : 비디오의 가로/세로 크기 설정-->
+    <!--loop : 반복 재생-->
+    <!--autoplay : 웹 문서가 열림과 동시에 자동 재생-->
+    <!--muted : 음소거 상태로 시작-->
+    <!--preload : 비디오 파일을 사용 여부와 상관없이 미리 다운로드-->
+
+
+
+    <h3>비디오 자동 재생</h3>
+    <video src="../images/bear.mp4" controls width="300" height="250"></video>
+    <h3>비디오 다중 재생-비디오 파일이 현재 폴더에 있는 경우</h3>
+    <video controls autoplay width="300" height="250">
+        <source src="../images/small.mp4" type="video/mpeg">
+        <source src="../images/small.ogv" type="video/ogg">
+        <source src="../images/small.webm" type="video/webm">
+        비디오 파일을 재생할 수 없습니다.
+    </video>
+
+
+
+    <h3>비디오 다중 재생-비디오 파일이 웹 사이트에 있는 경우</h3>
+    <video controls autoplay width="300" height="250 " poster="wait.jpg">
+        <source src="http://media.w3.org/2010/05/sintel/trailer.mp4" type='video/mp4; codecs="avc1, mp4a"'>
+        <source src="http://media.w3.org/2010/05/sintel/trailer.ogv" type='video/ogg; codecs="theora, vorbis"'>
+        비디오 파일을 재생할 수 없습니다.
+    </video>
+    <!--poster : 비디오 파일이 재생되기 전이나 다운로드되지 않고 있는 경우 표시될 이미지의 URL을 표시-->
+    <br>
+    <br>
+    <br>
+    
+</body>
+
+</html>

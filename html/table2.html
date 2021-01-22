@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <article>
+            <table border="1" style="width:50%">
+
+            <caption>행 통합 테이블</caption>
+            <tr>
+                <th>1행</th>
+                <th>1행 2열</th>
+            </tr>
+            <tr>
+                <th rowspan="2">2행</th>  <!--셀을 세로로 병합. 병합하고 싶은 행의 수만큼 속성값을 지정.-->
+                <th>2행 2열</th>
+            </tr>
+            <tr>
+                <td>3행 2열</td>
+            </tr>
+            </table>
+        </article>
+
+    </section>
+    <p></p>
+    <section>
+        <article>
+            <table border="1" style="width:50%">
+            <caption>열 통합 테이블</caption>
+            <tr>
+                <th>1열</th>
+                <th colspan="2">2열</th>   <!--셀을 가로로 병합. 병합하고 싶은 열의 수만큼 속성값을 지정-->
+            </tr>
+
+            <tr>    <!--행(table rows)을 만드는 <tr> 태그를 사용한 후 열(table data)을 만드는 <td> 태그를 셀 개수만큼 사용-->
+
+                <td>2행 1열</td>     <!--<td>태그는 사용할 때마다 셀이 하나씩 늘어난다. <td>태그는 반드시 <tr>태그 내에서만 사용해야 한다.-->
+                <td>2행 2열</td>
+                <td>2행 3열</td>
+            </tr>
+            </table>
+        </article>
+
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom3.html</title>
+    <style>
+        #container {
+            width: 400px;
+            height: 400px;
+            background-color: yellow;
+            position: relative;
+        }
+
+        #animate {
+            width: 300px;
+            height: 50px;
+            background-color: red;
+            position: absolute;
+            /*left: 50px;*/
+        }
+    </style>
+</head>
+
+<body>
+    <button id='btn'>Move Start!!</button>
+    <div id="container">
+        <div id="animate"></div>
+    </div>
+    <script>
+        let btn = document.getElementById('btn');
+        btn.onclick = moveStart; //moveStart() 이렇게 하면 클릭할 때 실행을 안 하고, 그 전에 실행을 한다.
+
+        setInterval(() => {
+            document.getElementById('animate').innerHTML = new Date();
+
+        },1000);
+
+        function moveStart() {
+            console.log('start');//콘솔 창에 start라는 단어가 뜬다.
+            let animate = document.getElementById("animate");
+            let i = 0;
+            let myInterval = setInterval(() => {
+                i += 1;   //i++
+                //animate.style.left = i * 2 + 'px';
+                //animate.style.top = i * 2 + 'px';
+                animate.style.left = i  + 'px';
+                animate.style.top = i + 'px';
+                if (i == 350)
+                    clearInterval(myInterval);
+
+            }, 10);
+
+
+
+        }
+        //event는 아무데나 주는 게 아니라 해당되는 element에 줘야한다.
+    </script>
+</body>
+
+</html>

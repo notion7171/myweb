@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <script>
+        var result;
+        //함수 선언
+        function add(name, n) {    //function 함수명(매개 변수1, 매개 변수2, ...)
+                                    //함수 호출문에서 전달한 인자를 받기 위해 선언된 변수.
+            document.write(name + "학생이 1부터" + n + "까지 덧셈 수행<br>");  
+            var sum=0;                           
+            for(var i=1; i<=n; i++) {
+                sum+=i;
+            }                     //실행문장
+            return sum;           //return 반환값
+                                  //함수 수행 결과값을 반환할 때는 'return' 키워드를 사용
+        }
+                                //함수 처리가 완료되면 자동으로 함수를 호출한 시점 다음으로 돌아가 프로그램을 계속 수행한다.
+
+        //함수 호출 : 함수명(인자1, 인자2,...)
+        //인자 : 함수를 호출할 때 전달하는 입력값
+        result=add('홍길동', 10);       //result는 반환값을 저장하기 위한 변수
+        document.write("결과:  " + result + "<p/>");
+        result=add('이영희', 100);
+        document.write("결과 : " + result + "<p/>");
+        document.write("변수 없이 반환값 출력"+ "<p/>");
+        document.write("결과 : " + add('홍길동', 10) + "<p/>");
+        document.write("결과 : " + add('이영희', 100) + "<p/>");
+        
+    </script>
+</body>
+</html>

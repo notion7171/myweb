@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajax.html</title>
+</head>
+
+<body>
+
+
+    <div id="show"></div>
+
+
+    <script>
+        let xhtp = new XMLHttpRequest();
+        //xhtp.open('get', 'data.txt');
+        //xhtp.send();
+        //xhtp.onload = function() {
+        xhtp.onreadystatechange = function () {
+            //console.log(xhtp.responseText);
+            //console.log(xhtp.readyState, xhtp.status);
+            if (xhtp.readyState == 4 && xhtp.status == 200) {
+                //console.log(xhtp.responseXML);
+                let doc = xhtp.responseXML;
+                let result = doc.querySelectorAll('dataset > record');
+                let ulTag = document.createElement('ul');
+                for (let i = 0; i < result.length; i++) {
+                    let liTag = document.createElement('li');
+                    let str = result[i].childNodes[0].childNodes[0].nodeValue + '-' +
+                    result[i].childNodes[1].childNodes[0].nodeValue + '-' +
+                    result[i].childNodes[2].childNodes[0].nodeValue;
+                    let textNode = document.createTextNode(str);
+                    liTag.appendChild(textNode);
+                    ulTag.appendChild(liTag);
+                    //console.log(result[0].childNodes[1].childNodes[0].nodeValue);
+                    //console.log(result[0].childNodes[2].childNodes[0].nodeValue);
+                    //console.log(result[0].childNodes[3].childNodes[0].nodeValue);
+                    //console.log(result[0].childNodes[4].childNodes[0].nodeValue);
+                    //console.log(result[0].childNodes[5].childNodes[0].nodeValue);
+                    //console.log('==============================');
+                    //show.innerHTML = xhtp.responseText;
+                }
+                let show = document.getElementById('show');
+                show.appendChild(ulTag);
+            }
+            //document.getElementById('show');
+            //show.innerHTML = xhtp.responseText;
+        }
+        xhtp.open('get', 'dataset.xml');
+        xhtp.send();
+
+    </script>
+</body>
+
+</html>

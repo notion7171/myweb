@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom2.html</title>
+</head>
+
+<body>
+    <div id=show></div>
+    <script>
+        //구구단을 생성.
+        //function makeMulti(val);
+        //테이블형식.
+
+        function createTable() {
+            let table = document.createElement('table');
+            table.setAttribute('border', '1');
+
+            let gugudan = [];
+            for (i = 1; i < 10; i++) {
+                
+                for (j = 1; j < 10; j++){
+                    gugudan.push(i+"*"+j);
+                    gugudan.push("=");
+                    gugudan.push(i*j);
+
+                }
+
+            }
+
+        
+
+        gugudan.forEach(function (a,b,c) {
+            if (b%3 == 0) {
+                trTag = document.createElement('tr');
+            }
+            let tdTag = document.createElement('td');
+            tdTag.innerHTML = a;
+            trTag.append(tdTag);
+            table.append(trTag);
+        })
+        return table;
+    }
+
+    result = createTable();
+    document.getElementById('show').append(result);
+
+    </script>
+</body>
+
+</html>

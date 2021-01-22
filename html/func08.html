@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function add() {
+            var sum=1;
+            return sum;
+        }
+
+        function add(x) {
+            var sum=x+1;
+            return sum;
+        }
+        
+        function add(x, y) {
+            var sum=x+y;
+            return sum;
+        }
+
+        function add(x,y,z) {
+            var sum=x+y+z;
+            return sum;
+        }
+
+        //이름은 같고 매개 변수의 개수가 다른 함수가 여러 개 있다면 맨 마지막에 선언된 함수가 호출 된다.
+
+        var r0=add();
+        var r1=add(1);
+        var r2=add(2,3);
+
+        //인자의 개수가 0이거나 매개 변수보다 적으면 NaN가 출력
+        //NaN은 연산 과정에서 잘못된 입력을 받았음을 나타내는 기호로, 숫자를 반환하지 못할 때 출력된다.
+        
+        var r3=add(4,5,6);
+
+
+        var r4=add(7,8,9,10);
+        //인자의 개수가 매개 변수보다 많으면 첫 인자부터 적용된 후 나머지 인자 값은 undefined로 처리된다.
+        
+
+        document.write("함수 호출 인자 없음 : " + r0 + "<p/>");
+        document.write("함수 호출 인자 부족 : " + r1 + "<p/>");
+        document.write("함수 호출 인자 부족 : " + r2 + "<p/>");
+        document.write("정상적인 함수 호출 : " + r3 + "<p/>");
+        document.write("7,8,9만 인자값으로 적용 : " + r4 + "<p/>");
+
+    </script>
+</body>
+</html>

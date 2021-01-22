@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let vals = [];   //중복값을 제외하도록 ...
+        for (let i = 0; i < 6; i++) {
+            //let val =  Math.random(); //0<x<1
+            let val = Math.floor(Math.random() * 6) + 1; //정수값?
+            vals[i] = val;
+            for (let j = 0; j < i; j++) { //이전값과 비교.
+                if (vals[j] == val) { //동일한 값이 있으면 i--;
+                    i--;
+                    break;
+
+                }
+            }
+        }
+        console.log(vals);
+    </script>
+</body>
+
+</html>

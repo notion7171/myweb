@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var city=new Array("Seoul", "Busan", "Incheon");        // 배열 객체 생성방법 var 배열명 = new Array(원소1, 원소2, 원소3, ...);
+        function printArr() {
+                                                                // 배열 객체 생성 확인 방법
+            if(city instanceof Array) {                         //1. Array 생성자의 연산자인 instanceof 사용
+                document.write("배열 객체가 생성되었습니다.<p/>");
+                var i;
+                for(i=0; i<city.length; i++) {
+                    document.write("배열 데이터[" + i +"] = " + city[i] + "<br>");
+                }
+            }
+            else {
+                document.write("배열 객체가 아닙니다. <br>");
+                document.write("데이터 : " + city + "<br>");
+            }
+        }
+        printArr();
+        document.write("<p/> city 변수 타입 : " + typeof city + "<br>");            //2. 타입 확인 연산자인 typeof 사용
+        document.write("배열 객체 확인 결과 : " + Array.isArray(city) + "<br>");    //3. 배열 객체 메소드인 isArray() 사용
+    </script>
+</body>
+</html>

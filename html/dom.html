@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom.html</title>
+</head>
+
+<body>
+    <div id="show"></div>
+    <div class="show">
+        <h1>
+            h1 tag
+        </h1>
+        <h2>
+            h2 tag
+        </h2>
+        <h3>
+            h3 tag
+        </h3>
+        <p>
+            p tag
+        </p>
+    </div>
+    <div class="show">Hello</div>
+    <script>
+        let show = document.getElementById('show');
+        show = document.getElementsByClassName('show');
+        show = document.getElementsByTagName('div');
+
+        //show = document.querySelectorAll('#show');
+        show = document.querySelectorAll('div>h3');
+        for (let i = 0; i < show.length; i++) {
+            show[i].innerHTML = i;
+        }
+        console.log(show);
+        //console.log(show[0]);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<html>
+
+  <head>
+    <title>DOM Tutorial</title>
+  </head>
+
+  <body>
+    <h1>DOM Lesson one</h1>
+    <p>Hello world!</p>
+    <div id="show"> </div> <!-- <ul><li>One</li><li>Two</li></ul>-->
+    <script>
+        let ul = document.createElement('ul');
+        let li = document.createElement('li');
+        let text = document.createTextNode('One');
+        li.append(text);
+        ul.append(li);
+
+        document.getElementById('show').append(ul);
+
+
+        let bdy = document.getElementsByTagName('body');
+        console.log(bdy[0].childNodes[1].childNodes[0]);
+
+        let p = document.getElementsByTagName('p');
+        console.log(p[0].previousSibling.nodeValue = 'hello');
+    </script>
+  </body>
+
+</html>

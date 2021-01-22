@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cal4.html</title>
+</head>
+
+<body>
+    <div id="show">
+        <!--<h1>Sun</h1>
+       <h1>Mon</h1>
+       <h1>Tue</h1>-->
+
+    </div>
+    <script>
+        function createHeader(a, b, c) {
+            let tdTag = document.createElement('th');
+            tdTag.innerHTML = a;
+            trTag.append(tdTag);
+            tableTag.append(trTag);
+
+        }
+        
+        function createData(item, idx, ary)  {
+            if (idx % 7 == 0) {
+                trTag = document.createElement('tr'); 
+            }
+            let tdTag = document.createElement('td');
+            //tdTag.setAttribute('border','3px');
+            tdTag.innerHTML = item;
+            trTag.append(tdTag);
+            tableTag.append(trTag);
+        }
+
+        
+        
+        let days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thr', 'Fri', 'Sat'];
+        let dates = [];
+        for (let i = 1; i <= 31; i++) {
+            dates.push(i);                //date 배열에 추가 된다.
+
+        }
+
+        //console.log(dates);
+
+        /* for (day of days) {              //for(..of..) 는 배열에 들어있는 개수 만큼 루핑
+             console.log(day);
+  
+         }*/
+
+        /* for (day of dates) {
+             console.log(day);
+  
+             
+         }*/
+
+        let tableTag = document.createElement('table');
+        tableTag.setAttribute('border', '3');
+        tableTag.setAttribute('id', 'tbl');
+        
+        
+
+        //console.log(tableTag);
+
+        let trTag = document.createElement('tr'); 
+
+        days.forEach(createHeader);
+        dates.forEach(createData);
+        document.getElementById('show').append(tableTag);
+
+    </script>
+</body>
+
+</html>

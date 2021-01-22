@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajax.html</title>
+</head>
+
+<body>
+
+
+    <div id="show"></div>
+
+    <script>
+        let xhtp = new XMLHttpRequest();
+
+        xhtp.onreadystatechange = function () {
+
+            if (xhtp.readyState == 4 && xhtp.status == 200) {
+
+                let table = document.createElement('table');
+                table.setAttribute('border', '1');
+
+                let head = ['no', 'firstname', 'lastname'];
+
+                let trTag = document.createElement('tr');
+
+                head.forEach(function (a, b, c) {
+                    let tdTag = document.createElement('th');
+                    tdTag.innerHTML = a;
+                    trTag.append(tdTag);
+                    table.append(trTag);
+                });
+
+
+                let doc = xhtp.responseXML;
+                let result = doc.querySelectorAll('dataset > record');
+                let ulTag = document.createElement('ul');
+               
+
+                for (let i = 0; i < result.length; i++) {
+                    if (b % 4 == 0) {
+                    trTag = document.createElement('tr');
+                }
+
+                    let str = result[i].childNodes[0].childNodes[0].nodeValue + '-' +
+                        result[i].childNodes[1].childNodes[0].nodeValue + '-' +
+                        result[i].childNodes[2].childNodes[0].nodeValue;
+                    let textNode = document.createTextNode(str);
+                    //liTag.appendChild(textNode);
+                    //ulTag.appendChild(liTag);
+
+                    tdTag.appendChild = textNode;
+                trTag.append(tdTag);
+                table.append(trTag);
+                   
+                }
+               
+            return table;
+            }
+            
+        }
+
+
+        xhtp.open('get', 'dataset.xml');
+        xhtp.send();
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var city=[];  //배열에 저장될 원소 개수를 알 수 없는 경우 배열 선언
+        city[0]="Seoul";
+        city[1]="Busan";
+        city[2]="Incheon";
+        city[3]="Mokpo";
+        city[4]="Sejong";
+        function printArr() {
+            var i;
+            for(i=0; i<city.length; i++) {
+                document.write("배열 데이터[" + i +"]=" + city[i] + "<br>");
+            }
+        }
+        printArr();
+    </script>
+</body>
+</html>

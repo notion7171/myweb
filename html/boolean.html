@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let trueOrFalse = (10 < 9);
+        //trueOrFalse = 0;
+
+        if(trueOrFalse) {
+            console.log('참입니다');
+        } else {
+            console.log('거짓입니다');
+        }
+
+        let val1 = 100;
+        let val2 = '100';
+        if (val1 == val2) {
+            console.log('동일합니다.');
+        } else {
+            console.log('다릅니다.');
+        }
+
+        if (val1 === val2) {      //val1 != val2, !== 
+            console.log('동일합니다.');
+        } else {
+            console.log('다릅니다.');
+        }
+
+        if(!(val1 === val2)) {
+            console.log('동일합니다.');
+        } else {
+            console.log('다릅니다.');
+        }
+
+        let result = val1 > 100 ? '100보다 크다':'100보다 작다' ;
+        result = 'hello';
+    </script>
+</body>
+</html>

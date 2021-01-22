@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function01014_2.html</title>
+</head>
+
+<body>
+    <div id="show">
+    </div>
+    <script>
+        
+
+        
+
+        //요기부터
+        function Person(name, age, hobby) {     //대문자 p를 소문자 p로 써도 상관은 없다.
+			
+			
+			this.name = name;
+			this.age = age;
+			this.hobby = hobby;
+			//this.phone = phone;
+			
+		}
+        let persons = [];
+		Person.prototype.phone = '010-1111-2222';
+		Person.prototype.toString = function () {
+			return this.name + ',' + this.age + ', ' + this.hobby + ',' + this.phone;
+		}
+		
+		let p1 = new Person('Park',20, 'sleeping');
+		p1.phone = '010-1234-5678';
+		let p2 = new Person('Choi',22, 'reading');
+		persons.push(p1);
+		persons.push(p2);
+		persons.push(new Person('Kim',25,'game'));
+        
+        //document.getElementById('show').append(persons);
+        //요기까지 object0104에서 복사해옴.
+
+        function createTable() {
+            //persons => 배열
+            //이름, 나이, 취미, 연락처가 나오는 테이블 만들기
+            let table = document.createElement('table');
+            table.setAttribute('border', '1');
+
+            let head = ['이름', '나이', '취미', '번호'];
+
+            let day = [];
+            for (let i = 0; i < persons.length; i++) {
+                day.push(persons[i].name);
+                day.push(persons[i].age);
+                day.push(persons[i].hobby);
+                day.push(persons[i].phone);
+                //console.log(day);
+            }
+            
+        
+
+            let trTag = document.createElement('tr');
+
+            head.forEach(function (a,b,c) {
+                console.log(a);
+                console.log(b);
+                console.log(c);
+                let tdTag = document.createElement('th');
+                tdTag.innerHTML = a;
+                trTag.append(tdTag);
+                table.append(trTag);
+            });
+
+
+
+            day.forEach(function (a,b,c) {
+                if (b % 4 == 0) {
+                    trTag = document.createElement('tr');
+                }
+                let tdTag = document.createElement('td');
+                tdTag.innerHTML = a;
+                trTag.append(tdTag);
+                table.append(trTag);
+
+            })
+            return table;
+        }
+
+        result = createTable();
+        document.getElementById('show').append(result);
+
+    
+
+    </script>
+</body>
+
+</html>

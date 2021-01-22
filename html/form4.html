@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>from4.html</title>
+</head>
+
+<body>
+    <div id="show">
+    </div>
+    <script>
+        
+        let members = [];
+        for (let i = 1; i <= 3; i++) {
+            let member = {};
+            member.name = '홍길동' + i;
+            member.age = 20 + i + '세';
+            member.hobby = '독서' + i;
+            //console.log(member);
+            members.push(member);           //members에다가 member를 넣어준다. 
+        }
+
+        //console.log(members);
+
+        let fields = ['name', 'age', 'hobby'];
+        let show = document.getElementById('show');       //지정된 id를 가진 요소를 가져온다. 즉, show라는  id를 가진 요소(위에 있는 div)를 가져와서 show라는 변수에 담는다.
+        //let table = document.getElementById('tbl');     
+        let table = document.createElement('table');
+        let tr = document.createElement('tr');          //<tr>태그는 행(table rows)을 만든다.
+        let td = document.createElement('td');          //<td>태그는 열을 만드는데, <tr>안에서만 쓸 수 있다.
+        let label = document.createElement('label');
+        table.setAttribute('border', '1');
+
+        members.forEach(createData); //members에서 빼온 값을 createData의 item으로 넣어준다.
+
+        function createData(item, idx) {
+            //console.log(item,idx);
+            tr = document.createElement('tr');  
+            //체크박스
+            td = document.createElement('td'); //tr, td가 있어야 테이블 모양으로 나온다.
+            label = document.createElement('label');
+            label.setAttribute('for', 'check');
+            //label.innerHTML = 'Lbl';
+            let checkbox = document.createElement('input');
+            checkbox.setAttribute('type', 'checkbox');
+            checkbox.setAttribute('name', 'check');
+            checkbox.setAttribute('id', 'check');
+            //console.log(checkbox);
+            td.append(label);
+            td.append(checkbox);
+            //console.log(td);
+            //td.append(td);
+
+            //이름, 나이, 취미
+            for (field of fields) {
+                //console.log(field);
+                td.innerHTML = item[field];
+                //console.log(item[field]);
+                console.log(td);
+            
+                tr.append(td);
+                //console.log(tr);
+            }
+
+            //버튼
+            td = document.createElement('td');
+            let btn = document.createElement('button');
+            btn.innerHTML = 'OK';
+            td.append(btn);
+            tr.append(td);
+            table.append(tr);
+            
+
+
+
+
+        }
+        show.append(table);
+        //console.log(show);
+
+
+
+    </script>
+</body>
+
+</html>

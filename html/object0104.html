@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+		function Person(name, age, hobby) {     //대문자 p를 소문자 p로 써도 상관은 없다.
+			
+			
+			this.name = name;
+			this.age = age;
+			this.hobby = hobby;
+			//this.phone = phone;
+			
+		}
+        let persons = [];
+		Person.prototype.phone = '010-1111-2222';
+		Person.prototype.toString = function () {
+			return this.name + ',' + this.age + ', ' + this.hobby + ',' + this.phone;
+		}
+		
+		let p1 = new Person('Park',20, 'sleeping');
+		p1.phone = '010-1234-5678';
+		let p2 = new Person('Choi',22, 'reading');
+		persons.push(p1);
+		persons.push(p2);
+		persons.push(new Person('Kim',25,'game'));
+		
+		//console.log(persons);
+		
+		for(person of persons) {
+			console.log(person.toString());
+		}
+		
+		let p4 = {
+			name: 'Hong',
+			age : 20
+		}
+		
+		Object.defineProperty(p4, 'hobby', 'reading');
+		
+    </script>
+</body>
+</html>

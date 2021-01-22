@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="upspeed"></p>
+    <p id="downspeed"></p>
+    <script>
+        var car={                                   // var 객체 변수 = {
+            name: 'Sonata',                         // 속성명 : "속성값"
+            speed: 50,
+            color: 'white',
+            speedup: function() {                   //메소드명 :
+                                                    //메소드 정의(함수형식)
+                return this.speed+10;               //this는 객체 자체를 의미. 즉 this.speed는 car 객체의 속성인 speed를 말한다.
+            },
+            speeddown: function() {
+                var low=this.speed-10;
+                return low;
+            }
+        };
+        var upspeed=document.getElementById("upspeed");             
+        upspeed.textContent='속도 증가 : ' + car.speedup();
+        var downspeed=document.getElementById("downspeed");
+        downspeed.textContent='속도 감소 : ' + car.speeddown();
+
+    </script>
+</body>
+</html>

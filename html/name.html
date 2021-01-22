@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p id="name0"></p>
+    <p id="age0"></p>
+    <p id="hobby0"></p>
+
+    <p id="name1"></p>
+    <p id="age1"></p>
+    <p id="hobby1"></p>
+
+    <p id="name2"></p>
+    <p id="age2"></p>
+    <p id="hobby2"></p>
+
+    <script>
+       
+        let Friend= [
+            {name:'Aaron', age:'20', hobby:'등산'},
+            {name:'Abel', age:'30', hobby:'나무심기'},
+            {name:'Abigail', age:'40', hobby:'땅파기'},
+        ]
+
+        for(let i=0; i<3; i++) {
+            let fname=document.getElementById("name"+i);
+            fname.textContent='이름 : ' + Friend[i].name;
+
+            let fage=document.getElementById("age"+i);
+            fage.textContent='나이 : ' + Friend[i].age;
+
+            let fhobby=document.getElementById("hobby"+i);
+            fhobby.textContent='취미 : ' + Friend[i].hobby;
+
+        }
+            
+
+            
+        
+    </script>
+
+</body>
+</html>
